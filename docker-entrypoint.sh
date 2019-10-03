@@ -23,7 +23,7 @@ if [ -z $DISABLE_CRON ];then
     crond
 fi
 
-sed -i "s|listen 80|listen ${PORT:-80}|" /etc/nginx/conf.d/default.conf
+# sed -i "s|listen 80|listen ${PORT:-80}|" /etc/nginx/conf.d/default.conf
 chown -R www-data:www-data /var/www/html/cache
 chown -R www-data:www-data /var/www/html/config
 php-fpm & nginx '-g daemon off;'
